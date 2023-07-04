@@ -1,0 +1,21 @@
+.div-all-games{
+    padding: 36px;
+}
+
+.h2-all-games{
+    color: var(--red);
+    font-size: 96px;
+    margin-bottom: 36px;
+}
+
+.div-search{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 36px;
+}
+
+.h3-all-games{
+    color: var(--red);
+    font-size: 56px;
+}

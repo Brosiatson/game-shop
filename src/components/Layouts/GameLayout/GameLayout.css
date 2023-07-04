@@ -1,0 +1,58 @@
+.div-game{
+    padding: 36px;
+}
+
+.div-game-info{
+    border-bottom: 1px solid var(--red);
+    color: var(--red);
+    display: flex;
+    gap: 64px;
+    justify-content: space-between;
+    padding-bottom: 32px;
+    margin-bottom: 32px;
+}
+
+.div-game-info img{
+    border: 1px solid var(--red);
+}
+
+.p-game-title{
+    font-size: 72px;
+}
+
+.div-game-price{
+    align-items: center;
+    border: 1px solid var(--red);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 36px;
+    width: 216px;
+}
+
+.div-game-other-games{
+    display: flex;
+    flex-direction: column;
+}
+
+.div-game-other-games-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 36px;
+    justify-content: center;
+}
+
+.h2-other-games{
+    color: var(--red);
+    font-size: 64px;
+    margin-bottom: 36px;
+}
+
+.a-all-games{
+    background-color: var(--dark-blue);
+    border: 1px solid var(--red);
+    color: var(--red);
+    margin: 36px auto 0 auto;
+    padding: 16px;
+    text-decoration: none;
+}

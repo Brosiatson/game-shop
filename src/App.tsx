@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { RouterProvider } from 'react-router-dom'
+import { useState } from 'react'
+import './App.css'
+import { router } from './routers/Router'
+import { Context } from './contexts/context'
+import gamesJson from './games.json'
+import { ContextType, GameType } from './types/Types'
 
 function App() {
+  const [games, setGames] = useState<GameType[]>(gamesJson)
+  const [searchedGames, setSearchedGames] = useState<GameType[]>(gamesJson)
+  const [inputText, setInputText] = useState<string>("")
+
+  const value: ContextType = {
+    games: {
+      games: games,
+      setGames: setGames
+    },
+    searchedGames: {
+      searchedGames: searchedGames,
+      setSearchedGames: setSearchedGames
+    },
+    inputText: {
+      inputText: inputText,
+      setInputText: setInputText
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Context.Provider value={value}>
+      <RouterProvider router={router}/>
+    </Context.Provider>
+  )
 }
 
-export default App;
+export default App

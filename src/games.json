@@ -1,0 +1,167 @@
+[
+    {
+        "title": "Grand Theft Auto V",
+        "code": "gta5",
+        "rate": "4.8",
+        "img": "gta5.png",
+        "price": 30.99,
+        "isNew": false,
+        "isWishlist": false,
+        "isShoppingCart": 0,
+        "isSale": 0.12
+    },
+    {
+        "title": "Football Manager 2023",
+        "code": "fm23",
+        "rate": "4.2",
+        "img": "fm23.png",
+        "price": 42.89,
+        "isNew": true,
+        "isWishlist": false,
+        "isShoppingCart": 0,
+        "isSale": 0
+    },
+    {
+        "title": "Payday 2",
+        "code": "pd2",
+        "rate": "4.4",
+        "img": "pd2.png",
+        "price": 10.00,
+        "isNew": false,
+        "isWishlist": false,
+        "isShoppingCart": 0,
+        "isSale": 0.20
+    },
+    {
+        "title": "FIFA 23",
+        "code": "f23",
+        "rate": "3.6",
+        "img": "f23.png",
+        "price": 54.99,
+        "isNew": true,
+        "isWishlist": false,
+        "isShoppingCart": 0,
+        "isSale": 0
+    },
+    {
+        "title": "Grand Theft Auto IV",
+        "code": "gta4",
+        "rate": "4.1",
+        "img": "gta4.png",
+        "price": 12.79,
+        "isNew": false,
+        "isWishlist": false,
+        "isShoppingCart": 0,
+        "isSale": 0
+    },
+    {
+        "title": "Terraria",
+        "code": "ter",
+        "rate": "4.4",
+        "img": "ter.png",
+        "price": 8.90,
+        "isNew": false,
+        "isWishlist": false,
+        "isShoppingCart": 0,
+        "isSale": 0
+    },
+    {
+        "title": "F1 23",
+        "code": "f123",
+        "rate": "3.2",
+        "img": "f123.png",
+        "price": 32.99,
+        "isNew": true,
+        "isWishlist": false,
+        "isShoppingCart": 0,
+        "isSale": 0
+    },
+    {
+        "title": "Europa Universalis IV",
+        "code": "eu4",
+        "rate": "4.4",
+        "img": "eu4.png",
+        "price": 5.99,
+        "isNew": false,
+        "isWishlist": false,
+        "isShoppingCart": 0,
+        "isSale": 0.25
+    },
+    {
+        "title": "Hearts of Iron IV",
+        "code": "hoi4",
+        "rate": "3.9",
+        "img": "hoi4.png",
+        "price": 6.99,
+        "isNew": false,
+        "isWishlist": false,
+        "isShoppingCart": 0,
+        "isSale": 0
+    },
+    {
+        "title": "FIFA 22",
+        "code": "f22",
+        "rate": "3.6",
+        "img": "f22.png",
+        "price": 8.70,
+        "isNew": false,
+        "isWishlist": false,
+        "isShoppingCart": 0,
+        "isSale": 0.15
+    },
+    {
+        "title": "Valheim",
+        "code": "val",
+        "rate": "4.0",
+        "img": "val.png",
+        "price": 11.40,
+        "isNew": false,
+        "isWishlist": false,
+        "isShoppingCart": 0,
+        "isSale": 0
+    },
+    {
+        "title": "Green Hell",
+        "code": "grh",
+        "rate": "4.3",
+        "img": "grh.png",
+        "price": 12.25,
+        "isNew": false,
+        "isWishlist": false,
+        "isShoppingCart": 0,
+        "isSale": 0
+    },
+    {
+        "title": "Fallout 76",
+        "code": "fl76",
+        "rate": "3.7",
+        "img": "fl76.png",
+        "price": 8.40,
+        "isNew": false,
+        "isWishlist": false,
+        "isShoppingCart": 0,
+        "isSale": 0
+    },
+    {
+        "title": "Fallout 3",
+        "code": "flt3",
+        "rate": "4.4",
+        "img": "flt3.png",
+        "price": 7.99,
+        "isNew": false,
+        "isWishlist": false,
+        "isShoppingCart": 0,
+        "isSale": 0
+    },
+    {
+        "title": "LEGO Indiana Jones 2",
+        "code": "lij2",
+        "rate": "4.1",
+        "img": "lij2.png",
+        "price": 4.57,
+        "isNew": false,
+        "isWishlist": false,
+        "isShoppingCart": 0,
+        "isSale": 0.10
+    }
+]

@@ -1,0 +1,25 @@
+.div-shopping-cart-window{
+    align-items: center;
+    background-color: var(--red);
+    border: 1px solid var(--dark-blue);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 16px;
+    position: absolute;
+    transform: translateY(44px) translateX(-352px);
+    width: 512px;
+    z-index: 0;
+}
+
+.div-shopping-cart-window a{
+    background-color: var(--dark-blue);
+    color: var(--red);
+    font-size: 16px;
+    padding: 8px;
+}
+
+.p-shopping-cart-empty{
+    color: var(--dark-blue);
+    font-size: 16px;
+}

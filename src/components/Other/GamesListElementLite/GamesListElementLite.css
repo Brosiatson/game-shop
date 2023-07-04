@@ -1,0 +1,36 @@
+.div-games-list-element-lite{
+    align-items: center;
+    border-block: 1px solid var(--dark-blue);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.div-games-list-element-lite img{
+    height: 164px;
+    width: auto;
+}
+
+.div-games-list-element-lite p{
+    color: var(--dark-blue);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.div-game-cart-amount{
+    align-items: center;
+    display: flex;
+    gap: 4px;
+}
+
+.div-game-cart-amount button{
+    align-items: center;
+    background-color: var(--dark-blue);
+    border: none;
+    border-radius: 50%;
+    color: var(--red);
+    display: flex;
+    height: 16px;
+    justify-content: center;
+    width: 16px;
+}
