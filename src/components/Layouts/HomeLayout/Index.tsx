@@ -9,9 +9,9 @@ export const HomeLayout: React.FC = () => {
 
     const {games: {games}} = context
 
-    const gamesNewMap = games.map(game => game.isNew ? <GamesListElement key={game.code} game={game}/> : null)
-    const gamesSaleMap = games.map(game => game.isSale ? <GamesListElement key={game.code} game={game}/> : null)
-    const gamesOtherMap = games.map(game => !game.isSale && !game.isNew ? <GamesListElement key={game.code} game={game}/> : null)
+    const gamesNewMap = games.filter(game => game.isNew).map((game, index) => index < 3 ? <GamesListElement key={game.code} game={game}/> : null)
+    const gamesSaleMap = games.filter(game => game.isSale).map((game, index) => index < 3 ? <GamesListElement key={game.code} game={game}/> : null)
+    const gamesOtherMap = games.filter(game => !game.isSale && !game.isNew).map((game, index) => index < 3 ? <GamesListElement key={game.code} game={game}/> : null)
 
     return(
         <> 

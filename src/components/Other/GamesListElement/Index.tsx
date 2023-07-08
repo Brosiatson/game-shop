@@ -31,8 +31,8 @@ export const GamesListElement: React.FC<{game: GameType}> = ({game: {title, code
             {isSale ?
                 <h2 className="h2-price">
                     <p>{(price * (1 - isSale)).toFixed(2)}$</p>
-                    <p style={{textDecoration: "line-through", fontSize: "20px"}}>{price.toFixed(2)}$</p>
-                    <p style={{fontSize: "16px"}}>{`-${isSale * 100}%`}</p>
+                    <p style={{textDecoration: "line-through"}}>{price.toFixed(2)}$</p>
+                    <p className="h2-price-percent">{`-${isSale * 100}%`}</p>
                 </h2> :
                 <h2>{price.toFixed(2)}$</h2>
             } 

@@ -21,3 +21,9 @@
     margin-block: 36px;
     width: 100%;
 }
+
+@media (max-width: 450px) {
+    .h2-homepage-part{
+        font-size: 32px;
+    }
+}

@@ -27,13 +27,16 @@ header input[type=text]{
     background-color: var(--dark-blue);
     border: 1px solid var(--red);
     color: #fff;
-    min-width: 320px;
-    padding-left: 16px;
     width: 32%;
 }
 
 header input[type=text]::placeholder{
     color: #fff;
+}
+
+.div-searching input{
+    min-width: 320px;
+    padding-left: 16px;
 }
 
 .div-searching a{
@@ -97,6 +100,7 @@ header input[type=text]::placeholder{
 
 .div-hamburger-input{
     display: flex;
+    justify-content: center;
 }
 
 .div-hamburger-opened button{
@@ -110,6 +114,8 @@ header input[type=text]::placeholder{
 .div-hamburger-opened input{
     font-size: 24px;
     height: 60px;
+    min-width: 240px;
+    padding-left: 16px;
 }
 
 .div-hamburger-opened a{
@@ -132,6 +138,28 @@ header input[type=text]::placeholder{
 @media (max-width: 850px) {
     .div-searching{
         display: none;
+    }
+}
+
+@media (max-width: 550px) {
+    .div-hamburger-opened input{
+        min-width: 132px;
+        padding-left: 8px;
+    }
+
+    .div-hamburger-opened input, .div-hamburger-input a{
+        font-size: 16px;
+        height: 40px;
+    }
+
+    .div-hamburger-input a{
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .div-hamburger-opened a{
+        font-size: 16px;
     }
 }
 
