@@ -11,11 +11,84 @@
 .div-search{
     align-items: center;
     display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
     justify-content: space-between;
     margin-bottom: 36px;
+}
+
+.div-search form{
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.div-search label{
+    color: var(--red);
+    display: flex;
+    gap: 8px;
+}
+
+.div-search input[type="search"]{
+    background-color: var(--dark-blue);
+    border: 2px solid var(--red);
+    color: #fff;
+    height: 36px;
+    padding-left: 8px;
+    width: 164px;
+}
+
+.div-search input[type="search"]::placeholder{
+    color: #fff;
+}
+
+.div-search input[type="checkbox"]{
+    appearance: none;
+    border: 2px solid var(--red);
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+}
+
+.div-search input[type="checkbox"]:checked::after{
+    align-items: center;
+    color: var(--red);
+    content: "\2714";
+    display: flex;
+    font-size: 16px;
+    justify-content: center;
+}
+
+.div-search select{
+    background-color: var(--dark-blue);
+    border: 2px solid var(--red);
+    color: #fff;
+    height: 36px;
+    width: 184px;
+}
+
+.div-search button{
+    background-color: var(--dark-blue);
+    border: 2px solid var(--red);
+    color: var(--red);
+    cursor: pointer;
+    font-size: 16px;
+    height: 36px;
+    padding-inline: 8px;
 }
 
 .h3-all-games{
     color: var(--red);
     font-size: 56px;
+}
+
+@media (max-width: 420px){
+    .h2-all-games{
+        font-size: 48px;
+    }
+
+    .h3-all-games{
+        font-size: 32px;
+    }
 }

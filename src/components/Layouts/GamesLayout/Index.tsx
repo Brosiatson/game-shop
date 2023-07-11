@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useContextIsNull } from "../../../contexts/context"
 import { GamesList } from "../../Other/GamesList/Index"
 import { GamesListElement } from "../../Other/GamesListElement/Index"
@@ -6,39 +6,69 @@ import { Header } from "../../Other/Header/Index"
 import './GamesLayout.css'
 
 export const GamesLayout: React.FC = () => {
-    const [selectValue, setSelectValue] = useState<string>("none")
-    const [gamesMap, setGamesMap] = useState<JSX.Element[]>([])
+    const [selectValue, setSelectValue] = useState<string>("hp")
+    const [isNewCheckbox, setIsNewCheckbox] = useState<boolean>(true)
+    const [isSaleCheckbox, setIsSaleCheckbox] = useState<boolean>(true)
+    const [isOtherCheckbox, setIsOtherCheckbox] = useState<boolean>(true)
 
     const context = useContextIsNull()
-    const {searchedGames: {searchedGames}, inputText: {inputText}} = context
-
-    useEffect(() => {
-        switch(selectValue) {
-            case "none": setGamesMap(searchedGames.map(game => <GamesListElement key={game.title} game={game} />)); break
-            case "hp": setGamesMap(searchedGames
-                .sort((a, b) => b.price - a.price)
-                .map(game => <GamesListElement key={game.title} game={game} />)); break
-            case "lp": setGamesMap(searchedGames
-                .sort((a, b) => a.price - b.price)
-                .map(game => <GamesListElement key={game.title} game={game} />)); break
-            case "hr": setGamesMap(searchedGames
-                .sort((a, b) => Number(b.rate) - Number(a.rate))
-                .map(game => <GamesListElement key={game.title} game={game} />)); break
-            case "lr": setGamesMap(searchedGames
-                .sort((a, b) => Number(a.rate) - Number(b.rate))
-                .map(game => <GamesListElement key={game.title} game={game} />)); break
-            case "az": setGamesMap(searchedGames
-                .sort((a, b) => a.title > b.title ? 1 : -1)
-                .map(game => <GamesListElement key={game.title} game={game} />)); break
-            case "za": setGamesMap(searchedGames
-                .sort((a, b) => b.title > a.title ? 1 : -1)
-                .map(game => <GamesListElement key={game.title} game={game} />)); break
-        }
-    }, [selectValue, searchedGames])
+    const {games: {games}, searchedGames: {searchedGames, setSearchedGames}, inputText: {inputText, setInputText}} = context
 
     const handleSelect = (value: string) => {
         setSelectValue(value)
     }
+
+    const handleInputText = (value: string) => {
+        setInputText(value)
+    }
+
+    const handleIsNewCheckbox = () => {
+        setIsNewCheckbox(!isNewCheckbox)
+    }
+
+    const handleIsSaleCheckbox = () => {
+        setIsSaleCheckbox(!isSaleCheckbox)
+    }
+
+    const handleIsOtherCheckbox = () => {
+        setIsOtherCheckbox(!isOtherCheckbox)
+    }
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+
+        switch(selectValue) {
+            case "hp": games.sort((a, b) => b.price - a.price); break;
+            case "lp": games.sort((a, b) => a.price - b.price); break;
+            case "hr": games.sort((a, b) => Number(b.rate) - Number(a.rate)); break;
+            case "lr": games.sort((a, b) => Number(a.rate) - Number(b.rate)); break;
+            case "az": games.sort((a, b) => b.title > a.title ? -1 : 1); break;
+            case "za": games.sort((a, b) => a.title > b.title ? -1 : 1); break;
+        }
+
+        const newGames = isNewCheckbox ? games.filter(game => game.isNew) : []
+        const saleGames = isSaleCheckbox ? games.filter(game => game.isSale) : []
+        const otherGames = isOtherCheckbox ? games.filter(game => !game.isNew && !game.isSale) : []
+        
+        setSearchedGames(
+            [...newGames, ...saleGames, ...otherGames].filter(game => 
+                game.title.toUpperCase().includes(inputText.toUpperCase())
+            )
+        )
+    }
+
+    const handleReset = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+
+        setSearchedGames(games)
+        setInputText("")
+        setSelectValue("hp")
+        setIsNewCheckbox(true)
+        setIsSaleCheckbox(true)
+        setIsOtherCheckbox(true)
+    }
+
+    const searchedGamesElements = searchedGames.map(game => <GamesListElement game={game}/>)
 
     return (
         <>
@@ -47,17 +77,33 @@ export const GamesLayout: React.FC = () => {
                 <h2 className="h2-all-games">Store</h2>
                 <div className="div-search">
                     <h3 className="h3-all-games">Search for "{inputText}"</h3>
-                    <select onChange={(e) => handleSelect(e.currentTarget.value)}>
-                        <option value={"none"}>None</option>
-                        <option value={"hp"}>From The Highest Price</option>
-                        <option value={"lp"}>From The Lowest Price</option>
-                        <option value={"hr"}>From The Highest Rating</option>
-                        <option value={"lr"}>From The Lowest Rating</option>
-                        <option value={"az"}>A-Z</option>
-                        <option value={"za"}>Z-A</option>
-                    </select>
+                    <form onSubmit={(e) => handleSubmit(e)} onReset={(e) => handleReset(e)}>
+                        <input type="search" value={inputText} placeholder="Search Game..." onChange={(e) => handleInputText(e.currentTarget.value)}></input>
+                        <label>
+                            New:
+                            <input type="checkbox" onChange={handleIsNewCheckbox} checked={isNewCheckbox}></input>
+                        </label>
+                        <label>
+                            Sale:
+                            <input type="checkbox" onChange={handleIsSaleCheckbox} checked={isSaleCheckbox}></input>
+                        </label>
+                        <label>
+                            Other:
+                            <input type="checkbox" onChange={handleIsOtherCheckbox} checked={isOtherCheckbox}></input>
+                        </label>
+                        <select onChange={(e) => handleSelect(e.currentTarget.value)}>
+                            <option value={"hp"}>From The Highest Price</option>
+                            <option value={"lp"}>From The Lowest Price</option>
+                            <option value={"hr"}>From The Highest Rating</option>
+                            <option value={"lr"}>From The Lowest Rating</option>
+                            <option value={"az"}>A-Z</option>
+                            <option value={"za"}>Z-A</option>
+                        </select>
+                        <button type="submit">Submit</button>
+                        <button type="reset">Reset</button>
+                    </form>
                 </div>
-                <GamesList games={gamesMap} text="No game found!!!"/>
+                <GamesList games={searchedGamesElements} text="No game found!!!"/>
             </main>
         </>
     )

@@ -37,7 +37,7 @@ export const GamesListElement: React.FC<{game: GameType}> = ({game: {title, code
                 <h2>{price.toFixed(2)}$</h2>
             } 
             <div className="div-games-list-element-info">
-                <p>Ratio: { rate }</p>
+                <p>Rate: { rate }</p>
             </div>
             <div className="div-games-list-element-buttons">
                 <Link to={ `/game/${code}` }>View More</Link>
