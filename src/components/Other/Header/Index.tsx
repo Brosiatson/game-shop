@@ -34,7 +34,7 @@ export const Header: React.FC = () => {
         <header>
             <h1><Link to="/">Games Paradise</Link></h1>
             <div className='div-searching'>
-                <input type="text" placeholder='Search Game...' value={inputText} onChange={(e) => handleInputText(e)}></input>
+                <input type="search" placeholder='Search Game...' value={inputText} onChange={(e) => handleInputText(e)}></input>
                 <Link to={inputText ? "/games" : ""} className='button-submit-search' onClick={handleButtonSearch}>Search</Link>
             </div>
             <div className='div-nav'>
@@ -51,8 +51,8 @@ export const Header: React.FC = () => {
                         <div className='div-hamburger-opened'>
                             <button onClick={handleButtonMenu}>X</button>
                             <div className='div-hamburger-input'>
-                                <input type="text" placeholder='Search Game...' value={inputText} onChange={(e) => handleInputText(e)}></input>
-                                <Link onClick={handleButtonMenu} to={inputText ? "/games" : ""} className='button-submit-search'>Search</Link>
+                                <input type="search" placeholder='Search Game...' value={inputText} onChange={(e) => handleInputText(e)}></input>
+                                <Link onClick={() => {handleButtonMenu(); handleButtonSearch()}} to={inputText ? "/games" : ""} className='button-submit-search'>Search</Link>
                             </div>
                                 <Link onClick={handleButtonMenu} to="/games">Store</Link>
                                 <Link onClick={handleButtonMenu} to="/wishlist">Wishlist</Link>

@@ -23,14 +23,14 @@ header a{
     height: 64px;
 }
 
-header input[type=text]{
+header input[type=search]{
     background-color: var(--dark-blue);
     border: 1px solid var(--red);
     color: #fff;
     width: 32%;
 }
 
-header input[type=text]::placeholder{
+header input[type=search]::placeholder{
     color: #fff;
 }
 

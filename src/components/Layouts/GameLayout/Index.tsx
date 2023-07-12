@@ -13,8 +13,11 @@ export const GameLayout: React.FC<{game: GameType}> = ({ game: { title, img, pri
     const shoppingCartImg = require(`../../../img/shoppingcart.png`)
     const wishlistImg = require(`../../../img/wishlist.png`)
     const wishlistActiveImg = require(`../../../img/wishlist-active.png`)
+    const steamLogoImg = require(`../../../img/steam-logo.png`)
+    const keyImg = require(`../../../img/key.png`)
+    const globalImg = require(`../../../img/global.png`)
 
-    const someGamesMap = games.map((game, i) => i < 3 ? <GamesListElement game={game}/> : null)
+    const someGamesMap = games.map((game, i) => i < 3 ? <GamesListElement key={game.title} game={game}/> : null)
 
     const handleButtonAddWishlist = () => {
         setGames(games.map(game => game.code === code ? {...game, isWishlist: !game.isWishlist} : game))
@@ -28,12 +31,28 @@ export const GameLayout: React.FC<{game: GameType}> = ({ game: { title, img, pri
         <>
             <Header />
             <main>
-                <div className="div-game-info">
-                    <img src={ importedImg } alt={title}></img>
-                    <p className="p-game-title">{ title }</p>
+                <div className="div-game">
+                    <img className="div-game-img" src={ importedImg } alt={title}></img>
+                    <div className="div-game-info">
+                        <h2 className="p-game-title">{ title }</h2>
+                        <div className="div-game-accessibility">
+                            <div>
+                                <img src={steamLogoImg} alt="steam"></img>
+                                <p>GAME ON STEAM</p>
+                            </div>
+                            <div>
+                                <img src={globalImg} alt="global"></img>
+                                <p>GLOBAL ACCESS</p>
+                            </div>
+                            <div>
+                                <img src={keyImg} alt="key"></img>
+                                <p>DIGITAL KEY</p>
+                            </div>
+                        </div>
+                    </div>
                     <div className="div-game-price">
-                        <p>Price: { price }</p>
-                        <button onClick={handleButtonAddWishlist}><img src={isWishlist ? wishlistActiveImg : wishlistImg} alt="wishlist"></img></button>
+                        <p>Price: { price }$</p>
+                        <button className={isWishlist ? "wishlist-active" : ""} onClick={handleButtonAddWishlist}><img src={isWishlist ? wishlistActiveImg : wishlistImg} alt="wishlist"></img></button>
                         <button onClick={handleButtonAddShoppingCart}><img src={shoppingCartImg} alt="shopping cart"></img></button>
                     </div>
                 </div>

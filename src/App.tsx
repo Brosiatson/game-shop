@@ -1,7 +1,6 @@
-import { RouterProvider } from 'react-router-dom'
 import { useState } from 'react'
 import './App.css'
-import { router } from './routers/Router'
+import { RoutesComp } from './routers/Router'
 import { Context } from './contexts/context'
 import gamesJson from './games.json'
 import { ContextType, GameType } from './types/Types'
@@ -28,7 +27,7 @@ function App() {
 
   return (
     <Context.Provider value={value}>
-      <RouterProvider router={router}/>
+      <RoutesComp />
     </Context.Provider>
   )
 }
