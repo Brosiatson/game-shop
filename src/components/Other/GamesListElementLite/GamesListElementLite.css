@@ -1,5 +1,6 @@
 .div-games-list-element-lite{
     align-items: center;
+    background-color: var(--red);
     border-block: 1px solid var(--dark-blue);
     display: flex;
     justify-content: space-between;
@@ -15,6 +16,9 @@
     color: var(--dark-blue);
     font-size: 16px;
     font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .div-game-cart-amount{
@@ -33,4 +37,11 @@
     height: 16px;
     justify-content: center;
     width: 16px;
+}
+
+@media (max-width: 640px) {
+    .div-games-list-element-lite img{
+        height: 48px;
+    }
+    
 }
