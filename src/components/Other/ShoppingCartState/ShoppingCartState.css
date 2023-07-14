@@ -1,0 +1,4 @@
+.shopping-state-current{
+    background-color: var(--red);
+    color: var(--dark-blue);
+}

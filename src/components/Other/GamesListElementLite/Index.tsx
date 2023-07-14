@@ -2,7 +2,7 @@ import { GameType } from "../../../types/Types"
 import './GamesListElementLite.css'
 import { useContextIsNull } from "../../../contexts/context"
 
-export const GamesListElementLite: React.FC<{game: GameType}> = ({game: {title, code, img, isShoppingCart, price}}) => {
+export const GamesListElementLite: React.FC<{game: GameType}> = ({game: {title, code, img, isShoppingCart, price, isSale}}) => {
     const context = useContextIsNull()
     const {games: {games, setGames}} = context
 
@@ -22,7 +22,7 @@ export const GamesListElementLite: React.FC<{game: GameType}> = ({game: {title, 
                 <button onClick={() => handleButton(1)}>+</button>
             </div>
             <div className="div-game-cart-price">
-                <p>{(price * isShoppingCart).toFixed(2)}$</p>
+                <p>{((price * (1 - isSale)) * isShoppingCart).toFixed(2)}$</p>
             </div>
         </div>
     )

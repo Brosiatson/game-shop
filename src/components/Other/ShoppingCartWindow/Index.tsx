@@ -13,7 +13,7 @@ export const ShoppingCartWindow: React.FC = () => {
     useEffect(() => {
         let x: number = 0
         for(let i = 0; i < games.length; i++) {
-            setTotal(x = x + (games[i].isShoppingCart * games[i].price))
+            setTotal(x = x + (games[i].isShoppingCart * (games[i].price * (1 - games[i].isSale))))
         }
     }, [games])
     

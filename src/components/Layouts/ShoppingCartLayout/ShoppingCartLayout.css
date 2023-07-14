@@ -48,35 +48,9 @@
     font-size: 24px;
 }
 
-.div-shopping-cart-games-price{
-    border: 1px solid var(--red);
-    color: var(--red);
-    display: flex;
-    flex-direction: column;
-    gap: 96px;
-    padding: 32px;
-}
-
-.div-shopping-cart-games-price p{
-    font-size: 48px;
-}
-
-.div-shopping-cart-games-price button{
-    background-color: var(--dark-blue);
-    border: 1px solid var(--red);
-    color: var(--red);
-    cursor: pointer;
-    font-size: 32px;
-    padding-block: 8px;
-}
-
 @media (max-width: 740px){
     .h2-shopping-cart{
         font-size: 48px;
-    }
-
-    .div-shopping-cart-games-price p, .div-shopping-cart-games-price button{
-        font-size: 20px;
     }
 }
 
