@@ -3,13 +3,12 @@ import { useContextIsNull } from "../../../contexts/context"
 import { Header } from "../../Other/Header/Index"
 import { KeysListElement } from "../../Other/KeysListElement/Index"
 import { ShoppingCartState } from "../../Other/ShoppingCartState/Index"
-import "./KeysLayout.css"
 
 export const KeysLayout: React.FC = () => {
     const {games: {games, setGames}} = useContextIsNull()
 
     const boughtGames: string[] = []
-    games.map(game => {
+    games.forEach(game => {
         for(let i = 0; i < game.isShoppingCart; i++) {
             boughtGames.push(game.code)
         }
@@ -24,13 +23,13 @@ export const KeysLayout: React.FC = () => {
         <>
             <Header />
             <main>
-                <h2 className="h2-keys">Keys</h2>
+                <h2 className="title">Keys</h2>
                 <ShoppingCartState number={3} />
-                <div className="keys-container">
-                    <h3>Thanks for shopping!!!</h3>
+                <div className="keys">
+                    <h3 className="keys__title">Thanks for shopping!!!</h3>
                     {keysList}
                 </div>
-                <Link className="keys-link" onClick={handleLink} to="/">Back to Home</Link>
+                <Link className="keys__link" onClick={handleLink} to="/">Back to Home</Link>
             </main>
         </>
     )

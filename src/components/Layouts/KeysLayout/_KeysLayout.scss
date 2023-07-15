@@ -1,0 +1,33 @@
+@use "../../../scss/Variables" as *;
+
+.keys{
+    @extend %center;
+    flex-direction: column;
+    gap: 36px;
+
+    &__title{
+        font-size: 64px;
+        margin-bottom: 36px;
+        text-align: center;
+    }
+
+    &__link{
+        @extend %button-default;
+        display: flex;
+        font-size: 24px;
+        margin: auto;
+        margin-top: 72px;
+        padding: 8px;
+        width: max-content;
+    }
+}
+
+@media (max-width: 760px) {
+    .keys{
+
+        &__title{
+            font-size: 24px;
+        }
+    }
+}
+

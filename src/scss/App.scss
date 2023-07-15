@@ -1,0 +1,80 @@
+/* Vars & Functions */
+
+@use "./Variables" as *;
+
+/* Layouts */
+
+@use "../components/Layouts/FormLayout/FormLayout";
+@use "../components/Layouts/GameLayout/GameLayout";
+@use "../components/Layouts/GamesLayout/GamesLayout";
+@use "../components/Layouts/KeysLayout/KeysLayout";
+@use "../components/Layouts/ShoppingCartLayout/ShoppingCartLayout";
+
+/* Other */
+
+@use "../components/Other/GameAccessibilityElement/GameAccessibilityElement";
+@use "../components/Other/GamesList/GamesList";
+@use "../components/Other/GamesListElement/GamesListElement";
+@use "../components/Other/GamesListElementLite/GamesListElementLite";
+@use "../components/Other/GamesSectionHomepage/GamesSectionHomepage";
+@use "../components/Other/HamburgerScreen/HamburgerScreen";
+@use "../components/Other/Header/Header";
+@use "../components/Other/KeysListElement/KeysListElement";
+@use "../components/Other/ShoppingCartPrice/ShoppingCartPrice";
+@use "../components/Other/ShoppingCartState/ShoppingCartState";
+@use "../components/Other/ShoppingCartWindow/ShoppingCartWindow";
+
+/* Font */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;500;600;700;800;900&display=swap');
+
+/* Styles */
+
+*{
+  box-sizing: border-box;
+  font-family: 'Nunito Sans';
+  margin: 0;
+  outline: none;
+  padding: 0;
+}
+
+#root, body{
+  background-color: $dark-blue;
+  color: $red;
+  min-height: 100vh;
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+.menu-displayed{
+  overflow: hidden;
+}
+
+main{
+  min-height: calc(100vh - 120px);
+  padding: 36px;
+
+  .title{
+    color: $red;
+    font-size: 96px;
+    margin-bottom: 36px;
+  }
+}
+
+::-webkit-scrollbar{
+  background: $dark-blue;
+  width: 16px;
+}
+
+::-webkit-scrollbar-thumb{
+  background: $red;
+  border: 4px solid $dark-blue;
+}
+
+@media (max-width: 700px) {
+  main{
+    .title{
+      font-size: 48px;
+    }
+  }
+}

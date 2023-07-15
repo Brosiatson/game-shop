@@ -1,0 +1,76 @@
+@use "../../../scss/Variables" as *;
+
+.filter{
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: space-between;
+    margin-bottom: 36px;
+
+    &__title{
+        font-size: 56px;
+    }
+
+    &__form{
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+
+    &__label{
+        @extend %center;
+        gap: 8px;
+    }
+
+    &__input{
+
+        &--text{
+            @extend %input-text-default;
+            height: 36px;
+            padding-left: 4px;
+            width: 164px;
+        }
+        
+        &--checkbox{
+            @extend %button-default;
+            appearance: none;
+            height: 24px;
+            width: 24px;
+
+            &:checked{
+                
+                &::after{
+                    @extend %center;
+                    content: "\2714";
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    &__select{
+        background-color: $dark-blue;
+        border: 1px solid $red;
+        color: #fff;
+        height: 36px;
+        width: 184px;
+    }
+
+    &__button{
+        @extend %button-default;
+        font-size: 16px;
+        height: 36px;
+        padding-inline: 8px;
+    }
+}
+
+@media (max-width: 420px){
+    .filter{
+
+        &__title{
+            font-size: 32px;
+        }
+    }
+}

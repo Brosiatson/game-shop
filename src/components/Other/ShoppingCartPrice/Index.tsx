@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useContextIsNull } from '../../../contexts/context'
 import { Link } from 'react-router-dom'
-import './ShoppingCartPrice.css'
 
 export const ShoppingCartPrice: React.FC<{link: string, text: string}> = ({link, text}) => {
     const [total, setTotal] = useState<number>(0)
@@ -15,9 +14,9 @@ export const ShoppingCartPrice: React.FC<{link: string, text: string}> = ({link,
     }, [games])
 
     return(
-        <div className='div-shopping-cart-games-price'>
-            <p>Total: {total.toFixed(2)}$</p>
-            <Link to={games.some(game => game.isShoppingCart) ? link : ""}>{text}</Link>
+        <div className='shopping-cart-price'>
+            <p className='shopping-cart-price__text'>Total: {total.toFixed(2)}$</p>
+            <Link className='shopping-cart-price__link' to={games.some(game => game.isShoppingCart) ? link : ""}>{text}</Link>
         </div>
     )
 }

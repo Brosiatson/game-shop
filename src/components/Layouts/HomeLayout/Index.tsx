@@ -2,7 +2,6 @@ import { useContextIsNull } from "../../../contexts/context"
 import { GamesListElement } from "../../Other/GamesListElement/Index"
 import { GamesSectionHomepage } from "../../Other/GamesSectionHomepage/Index"
 import { Header } from '../../Other/Header/Index'
-import './HomeLayout.css'
 
 export const HomeLayout: React.FC = () => {
     const context = useContextIsNull()

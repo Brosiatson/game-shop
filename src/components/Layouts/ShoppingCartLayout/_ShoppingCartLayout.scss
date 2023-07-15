@@ -1,0 +1,39 @@
+@use "../../../scss/Variables" as *;
+
+.shopping-cart{
+    @extend %center;
+    border-bottom: 1px solid $red;
+    flex-wrap: wrap;
+    gap: 240px;
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+
+    &__cart{
+        background-color: $red;
+        color: $dark-blue;
+        box-shadow: 0 0 32px 0 #000;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 16px;
+        width: 560px;
+
+        &--title{
+            font-size: 24px;
+        }
+
+        &--empty{
+            font-size: 20px;
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    .shopping-cart{
+
+        &__cart{
+            width: 216px;
+        }
+    }
+}

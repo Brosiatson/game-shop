@@ -1,5 +1,3 @@
-import './KeysListElement.css'
-
 export const KeysListElement: React.FC<{code: string}> = ({code}) => {
     const keyGenerator = `${code}-
         ${Math.floor(Math.random() * 8999 + 1000)}-
@@ -9,7 +7,7 @@ export const KeysListElement: React.FC<{code: string}> = ({code}) => {
 
     return(
         <div className="key">
-            <p>{keyGenerator}</p>
+            <p className="key__text">{keyGenerator}</p>
         </div>
     )
 } 

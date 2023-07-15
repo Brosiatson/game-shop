@@ -1,0 +1,46 @@
+@use "../../../scss/Variables" as *;
+
+.games-list-element-lite{
+    align-items: center;
+    border-block: 1px solid $dark-blue;
+    color: $dark-blue;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    &__img{
+        height: 164px;
+        width: auto;
+    }
+
+    &__title{
+        font-size: 16px;
+        font-weight: 600;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &__amount{
+        @extend %center;
+        gap: 4px;
+
+        &--button{
+            @extend %button-default;
+            @extend %center;
+            border-radius: 50%;
+            height: 16px;
+            width: 16px;
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    .games-list-element-lite{
+
+        &__img{
+            height: 48px;
+        }
+    }
+    
+}

@@ -1,0 +1,105 @@
+@use "../../../scss/Variables" as *;
+
+.games-list-element{
+    background-color: $dark-blue;
+    border: 1px solid $red;
+    box-shadow: 0 0 8px 2px #000;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 24px;
+    width: 320px;
+
+    &__img{
+        background-size: cover;
+        border: 1px solid $red;
+        height: 300px;
+        width: 100%;
+
+        &--new{
+            background-color: $red;
+            color: $dark-blue;
+            font-weight: 600;
+            padding: 8px;
+            width: min-content;
+        }
+    }
+
+    &__price{
+        align-items: center;
+        display: flex;
+        gap: 8px;
+
+        &--sale{
+            font-size: 20px;
+        }
+    }
+
+    &__buttons{
+        display: flex;
+        justify-content: space-between;
+
+        &--link{
+            @extend %center;
+            @extend %button-default;
+            height: 40px;
+            width: 50%;
+
+            &:hover{
+                background-color: $red;
+                color: $dark-blue;
+            }
+        }
+
+        &--disabled{
+            @extend %center;
+            @extend %button-default;
+            height: 40px;
+            width: 40px;
+        }
+
+        &--enabled{
+            @extend %center;
+            @extend %button-default;
+            background-color: $red;
+            height: 40px;
+            width: 40px;
+        }
+
+        &--img{
+            height: 56%;
+            width: auto;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .games-list-element{
+        gap: 16px;
+        padding: 12px;
+        width: 216px;
+
+        &__img{
+            height: 196px;
+        }
+
+        &__title{
+            font-size: 16px;
+        }
+
+        &__price{
+            font-size: 16px;
+        }
+
+        &__info{
+            font-size: 12px;
+        }
+
+        &__buttons{
+
+            &--link{
+                font-size: 12px;
+            }
+        }
+    }
+}

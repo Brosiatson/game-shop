@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './App.css'
+import './scss/App.scss'
 import { RoutesComp } from './routers/Router'
 import { Context } from './contexts/context'
 import gamesJson from './games.json'

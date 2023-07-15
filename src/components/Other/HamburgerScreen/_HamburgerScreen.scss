@@ -1,0 +1,77 @@
+@use "../../../scss/Variables" as *;
+
+.hamburger-screen{
+    @extend %center;
+    background-color: $dark-blue;
+    flex-direction: column;
+    gap: 48px;
+    height: 100vh;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+
+    &__button{
+        @extend %button-default;
+        border: none;
+        font-size: 36px;
+        position: absolute;
+        right: 24px;
+        top: 24px;
+    }
+
+    &__search{
+        display: flex;
+
+        &--input{
+            @extend %input-text-default;
+            font-size: 24px;
+            height: 60px;
+            min-width: 180px;
+            padding-left: 16px;
+        }
+
+        &--link{
+            @extend %button-default;
+            @extend %center;
+            font-size: 24px;
+            height: 60px;
+            padding-inline: 8px;
+        }
+    }
+
+    &__link{
+        @extend %button-default;
+        font-size: 32px;
+        padding: 8px 16px;
+
+        &:hover{
+            background-color: $red;
+            color: $dark-blue;
+        }
+    }
+}
+
+@media (max-width: 448px) {
+    .hamburger-screen{
+
+        &__search{
+
+            &--input{
+                font-size: 16px;
+                height: 40px;
+                padding-left: 8px;
+            }
+
+            &--link{
+                font-size: 16px;
+                height: 40px;
+            }
+        }
+
+        &__link{
+            font-size: 24px;
+            padding: 4px 8px;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+@use "../../../scss/Variables" as *;
+
+.section-homepage{
+    display: flex;
+    flex-direction: column;
+
+    &:not(:last-child){
+        border-bottom: 1px solid $red;
+        margin-bottom: 36px;
+    }
+
+    &__title{
+        font-size: 64px;
+        text-align: center
+    }
+
+    &__games-list{
+        @extend %center;
+        flex-wrap: wrap;
+        gap: 36px;
+        margin-block: 36px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 450px) {
+    .section-homepage{
+
+        &__title{
+            font-size: 32px;
+        }
+    }
+}

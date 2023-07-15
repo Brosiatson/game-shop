@@ -1,5 +1,4 @@
 import { GameType } from "../../../types/Types"
-import './GamesListElementLite.css'
 import { useContextIsNull } from "../../../contexts/context"
 
 export const GamesListElementLite: React.FC<{game: GameType}> = ({game: {title, code, img, isShoppingCart, price, isSale}}) => {
@@ -13,17 +12,15 @@ export const GamesListElementLite: React.FC<{game: GameType}> = ({game: {title, 
     }
 
     return (
-        <div className="div-games-list-element-lite">
-            <img src={importedImg} alt={title}></img>
-            <p>{title}</p>
-            <div className="div-game-cart-amount">
-                <button onClick={() => handleButton(-1)}>-</button>
-                <p>{isShoppingCart}</p>
-                <button onClick={() => handleButton(1)}>+</button>
+        <div className="games-list-element-lite">
+            <img className="games-list-element-lite__img" src={importedImg} alt={title}></img>
+            <p className="games-list-element-lite__title">{title}</p>
+            <div className="games-list-element-lite__amount">
+                <button className="games-list-element-lite__amount--button" onClick={() => handleButton(-1)}>-</button>
+                <p className="games-list-element-lite__amount--text">{isShoppingCart}</p>
+                <button className="games-list-element-lite__amount--button" onClick={() => handleButton(1)}>+</button>
             </div>
-            <div className="div-game-cart-price">
-                <p>{((price * (1 - isSale)) * isShoppingCart).toFixed(2)}$</p>
-            </div>
+            <p className="games-list-element-lite__price">{((price * (1 - isSale)) * isShoppingCart).toFixed(2)}$</p>
         </div>
     )
 }

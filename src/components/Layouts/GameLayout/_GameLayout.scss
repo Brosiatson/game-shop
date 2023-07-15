@@ -1,0 +1,91 @@
+@use "../../../scss/Variables" as *;
+
+.game{
+    @extend %center;
+    border-bottom: 1px solid $red;
+    flex-wrap: wrap;
+    gap: 64px;
+    padding-bottom: 32px;
+    margin-bottom: 32px;
+
+    &__img{
+        border: 1px solid $red;
+        height: 600px;
+        width: auto;
+    }
+
+    &__info{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        height: max-content;
+        justify-content: space-between;
+    }
+
+    &__title{
+        font-size: 72px;
+    }
+
+    &__accessibility{
+        @extend %center;
+        border-inline: 1px solid $red;
+        flex-wrap: wrap;
+        gap: 32px;
+        padding-inline: 16px;
+        white-space: nowrap;
+    }
+
+    &__price{
+        align-items: center;
+        border: 1px solid $red;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        height: min-content;
+        justify-content: space-between;
+        padding: 24px;
+        width: 324px;
+
+        &--text{
+            font-size: 32px;
+            text-align: center;
+        }
+
+        &--button{
+            @extend %center;
+            @extend %button-default;
+            height: 48px;
+            width: 48px;
+        }
+
+        &--button-active{
+            background-color: $red;
+        }
+
+        &--img{
+            height: 56%;
+            width: auto;
+        }
+    }
+}
+
+@media (max-width: 492px) {
+    .game{
+
+        &__title{
+            font-size: 32px;
+        }
+
+        &__img{
+            height: 320px;
+        }
+
+        &__price{
+
+            &--text{
+                font-size: 24px;
+            }
+        }
+    }
+}

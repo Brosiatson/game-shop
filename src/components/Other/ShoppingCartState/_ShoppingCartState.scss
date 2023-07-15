@@ -1,0 +1,22 @@
+@use "../../../scss/Variables" as *;
+
+.shopping-state{
+    @extend %center;
+    border-inline: 1px solid $red;
+    gap: 8px;
+    margin: auto;
+    margin-bottom: 72px;
+    padding-inline: 16px;
+    width: max-content;
+
+    &__element{
+        border: 1px solid $red;
+        font-size: 24px;
+        padding: 8px 16px;
+
+        &--current{
+            background-color: $red;
+            color: $dark-blue;
+        }
+    }
+}

@@ -1,0 +1,99 @@
+@use "../../../scss/Variables" as *;
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
+    justify-content: center;
+    margin: auto;
+    width: max-content;
+
+    &__label{
+        align-items: center;
+        display: flex;
+        font-size: 24px;
+        gap: 24px;
+        position: relative;
+    }
+
+    &__text{
+        font-size: 16px;
+        position: absolute;
+        right: 0;
+        top: -24px;
+    }
+
+    &__input{
+        @extend %input-text-default;
+        font-size: 32px;
+        height: 64px;
+        padding-left: 16px;
+        width: 416px;
+
+        &--cvv{
+            width: 136px;
+        }
+    }
+
+    &__button{
+        @extend %button-default;
+        font-size: 32px;
+        margin: auto;
+        padding: 16px;
+        width: max-content;
+    }
+}
+
+@media (max-width: 1100px) {
+    .form{
+
+        &__label{
+            font-size: 16px;
+        }
+
+        &__input{
+            font-size: 16px;
+            height: 40px;
+            width: 216px;
+
+            &--cvv{
+                width: 84px;
+            }
+        }
+    }
+}
+
+@media (max-width: 760px) {
+    .form{
+
+        &__button{
+            font-size: 20px;
+        }
+    }
+}
+
+@media (max-width: 460px) {
+    .form{
+
+        &__label{
+            font-size: 12px;
+            gap: 4px;
+        }
+
+        &__text{
+            font-size: 8px;
+        }
+
+        &__input{
+            font-size: 12px;
+            height: 32px;
+            padding-left: 4px;
+            width: 96px;
+
+            &--cvv{
+                width: 48px;
+            }
+        }
+    }
+}
+

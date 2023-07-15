@@ -1,0 +1,26 @@
+$dark-blue: #12121a;
+$red: #ff0040;
+
+%center{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+%button-default{
+    background-color: $dark-blue;
+    border: 1px solid $red;
+    color: $red;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+%input-text-default{
+    background-color: $dark-blue;
+    border: 1px solid $red;
+    color: #fff;
+
+    &::placeholder{
+        color: #fff;
+    }
+}

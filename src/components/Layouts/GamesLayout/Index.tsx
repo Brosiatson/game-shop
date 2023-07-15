@@ -3,7 +3,6 @@ import { useContextIsNull } from "../../../contexts/context"
 import { GamesList } from "../../Other/GamesList/Index"
 import { GamesListElement } from "../../Other/GamesListElement/Index"
 import { Header } from "../../Other/Header/Index"
-import './GamesLayout.css'
 
 export const GamesLayout: React.FC = () => {
     const [selectValue, setSelectValue] = useState<string>("hp")
@@ -75,24 +74,35 @@ export const GamesLayout: React.FC = () => {
         <>
             <Header />
             <main>
-                <h2 className="h2-all-games">Store</h2>
-                <div className="div-search">
-                    <h3 className="h3-all-games">Search for "{inputText}"</h3>
-                    <form onSubmit={(e) => handleSubmit(e)} onReset={(e) => handleReset(e)}>
-                        <input type="search" value={inputText} placeholder="Search Game..." onChange={(e) => handleInputText(e.currentTarget.value)}></input>
-                        <label>
+                <h2 className="title">Store</h2>
+                <div className="filter">
+                    <h3 className="filter__title">Search for "{inputText}"</h3>
+                    <form className="filter__form" onSubmit={(e) => handleSubmit(e)} onReset={(e) => handleReset(e)}>
+                        <input
+                            className="filter__input--text"
+                            type="search" 
+                            value={inputText} 
+                            placeholder="Search Game..." 
+                            onChange={(e) => handleInputText(e.currentTarget.value)}
+                        >
+                        </input>
+
+                        <label className="filter__label">
                             New:
-                            <input type="checkbox" onChange={handleIsNewCheckbox} checked={isNewCheckbox}></input>
+                            <input className="filter__input--checkbox" type="checkbox" onChange={handleIsNewCheckbox} checked={isNewCheckbox}></input>
                         </label>
-                        <label>
+
+                        <label className="filter__label">
                             Sale:
-                            <input type="checkbox" onChange={handleIsSaleCheckbox} checked={isSaleCheckbox}></input>
+                            <input className="filter__input--checkbox" type="checkbox" onChange={handleIsSaleCheckbox} checked={isSaleCheckbox}></input>
                         </label>
-                        <label>
+
+                        <label className="filter__label">
                             Other:
-                            <input type="checkbox" onChange={handleIsOtherCheckbox} checked={isOtherCheckbox}></input>
+                            <input className="filter__input--checkbox" type="checkbox" onChange={handleIsOtherCheckbox} checked={isOtherCheckbox}></input>
                         </label>
-                        <select onChange={(e) => handleSelect(e.currentTarget.value)}>
+
+                        <select className="filter__select" onChange={(e) => handleSelect(e.currentTarget.value)}>
                             <option value={"hp"}>From The Highest Price</option>
                             <option value={"lp"}>From The Lowest Price</option>
                             <option value={"hr"}>From The Highest Rating</option>
@@ -100,8 +110,9 @@ export const GamesLayout: React.FC = () => {
                             <option value={"az"}>A-Z</option>
                             <option value={"za"}>Z-A</option>
                         </select>
-                        <button type="submit">Submit</button>
-                        <button type="reset">Reset</button>
+
+                        <button className="filter__button" type="submit">Submit</button>
+                        <button className="filter__button" type="reset">Reset</button>
                     </form>
                 </div>
                 <GamesList games={searchedGamesElements} text="No game found!!!"/>

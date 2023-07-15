@@ -1,13 +1,12 @@
-import { Link } from "react-router-dom"
 import { useContextIsNull } from "../../../contexts/context"
 import { GameType } from "../../../types/Types"
 import { GamesListElement } from "../../Other/GamesListElement/Index"
 import { Header } from "../../Other/Header/Index"
-import './GameLayout.css'
+import { GamesSectionHomepage } from "../../Other/GamesSectionHomepage/Index"
+import { GameAccessibilityElement } from "../../Other/GameAccessibilityElement/Index"
 
 export const GameLayout: React.FC<{game: GameType}> = ({ game: { title, img, price, code, isWishlist } }) => {
-    const context = useContextIsNull()
-    const {games: {games, setGames}} = context
+    const {games: {games, setGames}} = useContextIsNull()
 
     const importedImg = require(`../../../img/${img}`) 
     const shoppingCartImg = require(`../../../img/shoppingcart.png`)
@@ -31,38 +30,35 @@ export const GameLayout: React.FC<{game: GameType}> = ({ game: { title, img, pri
         <>
             <Header />
             <main>
-                <div className="div-game">
-                    <img className="div-game-img" src={ importedImg } alt={title}></img>
-                    <div className="div-game-info">
-                        <h2 className="p-game-title">{ title }</h2>
-                        <div className="div-game-accessibility">
-                            <div>
-                                <img src={steamLogoImg} alt="steam"></img>
-                                <p>GAME ON STEAM</p>
-                            </div>
-                            <div>
-                                <img src={globalImg} alt="global"></img>
-                                <p>GLOBAL ACCESS</p>
-                            </div>
-                            <div>
-                                <img src={keyImg} alt="key"></img>
-                                <p>DIGITAL KEY</p>
-                            </div>
+                <div className="game">
+                    <img className="game__img" src={ importedImg } alt={title}></img>
+                    <div className="game__info">
+                        <h2 className="game__title">{ title }</h2>
+                        <div className="game__accessibility">
+                            <GameAccessibilityElement img={steamLogoImg} alt="steam" text="GAME ON STEAM"/>
+                            <GameAccessibilityElement img={globalImg} alt="global" text="GLOBAL ACCESS"/>
+                            <GameAccessibilityElement img={keyImg} alt="key" text="DIGITAL KEY"/>
                         </div>
                     </div>
-                    <div className="div-game-price">
-                        <p>Price: { price }$</p>
-                        <button className={isWishlist ? "wishlist-active" : ""} onClick={handleButtonAddWishlist}><img src={isWishlist ? wishlistActiveImg : wishlistImg} alt="wishlist"></img></button>
-                        <button onClick={handleButtonAddShoppingCart}><img src={shoppingCartImg} alt="shopping cart"></img></button>
+                    <div className="game__price">
+                        <p className="game__price--text">Price: { price }$</p>
+
+                        <button
+                            className={isWishlist ? "game__price--button game__price--button-active" : "game__price--button"} 
+                            onClick={handleButtonAddWishlist}
+                        >
+                            <img className="game__price--img" src={isWishlist ? wishlistActiveImg : wishlistImg} alt="wishlist"></img>
+                        </button>
+
+                        <button
+                            className="game__price--button" 
+                            onClick={handleButtonAddShoppingCart}
+                        >
+                            <img className="game__price--img" src={shoppingCartImg} alt="shopping cart"></img>
+                        </button>
                     </div>
                 </div>
-                <div className="div-game-other-games">
-                    <h2 className="h2-other-games">Other Games</h2>
-                    <div className="div-game-other-games-list">
-                        {someGamesMap}
-                    </div>
-                    <Link className="a-all-games" to="/games">All Games</Link>
-                </div>
+                <GamesSectionHomepage gamesMap={someGamesMap} text="Other Games"/>
             </main>
         </>
     )
