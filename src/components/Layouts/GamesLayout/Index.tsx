@@ -37,21 +37,22 @@ export const GamesLayout: React.FC = () => {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
-        switch(selectValue) {
-            case "hp": games.sort((a, b) => b.price - a.price); break;
-            case "lp": games.sort((a, b) => a.price - b.price); break;
-            case "hr": games.sort((a, b) => Number(b.rate) - Number(a.rate)); break;
-            case "lr": games.sort((a, b) => Number(a.rate) - Number(b.rate)); break;
-            case "az": games.sort((a, b) => b.title > a.title ? -1 : 1); break;
-            case "za": games.sort((a, b) => a.title > b.title ? -1 : 1); break;
-        }
-
         const newGames = isNewCheckbox ? games.filter(game => game.isNew) : []
         const saleGames = isSaleCheckbox ? games.filter(game => game.isSale) : []
         const otherGames = isOtherCheckbox ? games.filter(game => !game.isNew && !game.isSale) : []
+        const sortedTable = [...newGames, ...saleGames, ...otherGames]
+
+        switch(selectValue) {
+            case "hp": sortedTable.sort((a, b) => b.price - a.price); break;
+            case "lp": sortedTable.sort((a, b) => a.price - b.price); break;
+            case "hr": sortedTable.sort((a, b) => Number(b.rate) - Number(a.rate)); break;
+            case "lr": sortedTable.sort((a, b) => Number(a.rate) - Number(b.rate)); break;
+            case "az": sortedTable.sort((a, b) => b.title > a.title ? -1 : 1); break;
+            case "za": sortedTable.sort((a, b) => a.title > b.title ? -1 : 1); break;
+        }
         
         setSearchedGames(
-            [...newGames, ...saleGames, ...otherGames].filter(game => 
+            sortedTable.filter(game => 
                 game.title.toUpperCase().includes(inputText.toUpperCase())
             )
         )

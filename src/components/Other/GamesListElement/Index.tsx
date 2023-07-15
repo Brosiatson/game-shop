@@ -10,10 +10,11 @@ export const GamesListElement: React.FC<{game: GameType}> = ({game: {title, code
     const wishlistActiveImg = require(`../../../img/wishlist-active.png`)
 
     const context = useContextIsNull()
-    const {games: {games, setGames}} = context
+    const {games: {games, setGames}, searchedGames: {searchedGames, setSearchedGames}} = context
 
     const handleButtonAddWishlist = () => {
         setGames(games.map(game => game.code === code ? {...game, isWishlist: !game.isWishlist} : game))
+        setSearchedGames(searchedGames.map(game => game.code === code ? {...game, isWishlist: !game.isWishlist} : game))
     }
 
     const handleButtonAddShoppingCart = () => {

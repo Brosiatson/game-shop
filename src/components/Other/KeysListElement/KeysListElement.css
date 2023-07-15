@@ -1,0 +1,13 @@
+.key{
+    border: 1px solid var(--red);
+    color: var(--red);
+    font-size: 48px;
+    padding: 24px;
+}
+
+@media (max-width: 760px) {
+    .key{
+        font-size: 16px;
+        padding: 8px;
+    }
+}
