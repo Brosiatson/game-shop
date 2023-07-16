@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/game-shop/static/css/main.d9d2250c.css",
+    "main.js": "/game-shop/static/js/main.d7f67935.js",
+    "static/media/f23.png": "/game-shop/static/media/f23.77bf57c8cbfda4d6d2af.png",
+    "static/media/gta4.png": "/game-shop/static/media/gta4.1d241a962bd454c22219.png",
+    "static/media/steam-logo.png": "/game-shop/static/media/steam-logo.302b62f2f52aeebfe1e4.png",
+    "static/media/rdr2.png": "/game-shop/static/media/rdr2.e0081ed1f4548749849e.png",
+    "static/media/gta5.png": "/game-shop/static/media/gta5.a2ba64bc48e0dc2c7a3e.png",
+    "static/media/lij2.png": "/game-shop/static/media/lij2.a3855084df9c2b8fd52d.png",
+    "static/media/f123.png": "/game-shop/static/media/f123.8da6189c5900350cc896.png",
+    "static/media/fs22.png": "/game-shop/static/media/fs22.2ea02c64ad023cb54537.png",
+    "static/media/grd2.png": "/game-shop/static/media/grd2.c03b9bf31951fb597ceb.png",
+    "static/media/fm23.png": "/game-shop/static/media/fm23.b9ae7ed53bff7e4a3db6.png",
+    "static/media/pd2.png": "/game-shop/static/media/pd2.8100bea22d5ceb5fe8ab.png",
+    "static/media/hoi4.png": "/game-shop/static/media/hoi4.317e776179ad54b86aa9.png",
+    "static/media/eu4.png": "/game-shop/static/media/eu4.6a3dd9cfbe1b554f1dfc.png",
+    "static/media/cy77.png": "/game-shop/static/media/cy77.c88c3bf2b24d62dbd850.png",
+    "static/media/grh.png": "/game-shop/static/media/grh.0b1cb02fda7821820a44.png",
+    "static/media/ets2.png": "/game-shop/static/media/ets2.caf59e87ad4dab046744.png",
+    "static/media/ter.png": "/game-shop/static/media/ter.c0e5f3f429c0fcadf0a6.png",
+    "static/media/flt3.png": "/game-shop/static/media/flt3.efd69ca70e26b5fb0019.png",
+    "static/media/fl76.png": "/game-shop/static/media/fl76.af459853a5704fc02cc9.png",
+    "static/media/dyli.png": "/game-shop/static/media/dyli.cd1f70eeadda69144323.png",
+    "static/media/pinc.png": "/game-shop/static/media/pinc.4c960baf9e067ed749e3.png",
+    "static/media/f22.png": "/game-shop/static/media/f22.ed4632a6222cd677adf5.png",
+    "static/media/arm3.png": "/game-shop/static/media/arm3.4942f8d78fb1c8fb9012.png",
+    "static/media/snr4.png": "/game-shop/static/media/snr4.8486f91fa7f8ff63a116.png",
+    "static/media/val.png": "/game-shop/static/media/val.004209035e1ee8767ec3.png",
+    "index.html": "/game-shop/index.html",
+    "main.d9d2250c.css.map": "/game-shop/static/css/main.d9d2250c.css.map",
+    "main.d7f67935.js.map": "/game-shop/static/js/main.d7f67935.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d9d2250c.css",
+    "static/js/main.d7f67935.js"
+  ]
+}
