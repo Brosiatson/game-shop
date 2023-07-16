@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useContextIsNull } from "../../../contexts/context"
 import { GamesList } from "../../Other/GamesList/Index"
 import { GamesListElement } from "../../Other/GamesListElement/Index"
@@ -12,6 +12,12 @@ export const GamesLayout: React.FC = () => {
 
     const context = useContextIsNull()
     const {games: {games}, searchedGames: {searchedGames, setSearchedGames}, inputText: {inputText, setInputText}} = context
+
+    useEffect(() => {
+        setSearchedGames(games.filter(game => 
+            game.title.toUpperCase().includes(inputText.toUpperCase())
+        ))
+    }, [])
 
     const handleSelect = (value: string) => {
         setSelectValue(value)
@@ -68,7 +74,7 @@ export const GamesLayout: React.FC = () => {
         setIsOtherCheckbox(true)
     }
 
-    const searchedGamesElements = searchedGames.map(game => <GamesListElement game={game}/>)
+    const searchedGamesElements = searchedGames.map(game => <GamesListElement key={game.title} game={game}/>)
 
     return (
         <>

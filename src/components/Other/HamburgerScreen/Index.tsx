@@ -33,14 +33,14 @@ export const HamburgerScreen: React.FC<{setShowMenu: React.Dispatch<React.SetSta
                 <Link
                     className="hamburger-screen__search--link" 
                     onClick={() => {handleButtonMenu(); handleButtonSearch()}} 
-                    to={inputText ? "/games" : ""}
+                    to={inputText ? "/game-shop/games" : ""}
                 >
                 Search
                 </Link>
             </div>
-            <Link className="hamburger-screen__link" onClick={handleButtonMenu} to="/games">Store</Link>
-            <Link className="hamburger-screen__link" onClick={handleButtonMenu} to="/wishlist">Wishlist</Link>
-            <Link className="hamburger-screen__link" onClick={handleButtonMenu} to="/shopping-cart">Shopping Cart</Link>
+            <Link className="hamburger-screen__link" onClick={handleButtonMenu} to="/game-shop/games">Store</Link>
+            <Link className="hamburger-screen__link" onClick={handleButtonMenu} to="/game-shop/wishlist">Wishlist</Link>
+            <Link className="hamburger-screen__link" onClick={handleButtonMenu} to="/game-shop/shopping-cart">Shopping Cart</Link>
         </div>
     )
 }

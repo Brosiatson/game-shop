@@ -17,14 +17,16 @@ export const RoutesComp = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={ <HomeLayout /> } />
-                <Route path="games" element={ <GamesLayout /> } />
-                <Route path="game">{routeListMap}</Route>
-                <Route path="wishlist" element={<WishlistLayout />} />
-                <Route path="shopping-cart">
-                    <Route path="" element={<ShoppingCartLayout />} />
-                    <Route path="form" element={<FormLayout />} />
-                    <Route path="keys" element={<KeysLayout />} />
+                <Route path="/game-shop">
+                    <Route path="" element={ <HomeLayout /> } />
+                    <Route path="games" element={ <GamesLayout /> } />
+                    <Route path="game">{routeListMap}</Route>
+                    <Route path="wishlist" element={<WishlistLayout />} />
+                    <Route path="shopping-cart">
+                        <Route path="" element={<ShoppingCartLayout />} />
+                        <Route path="form" element={<FormLayout />} />
+                        <Route path="keys" element={<KeysLayout />} />
+                    </Route>
                 </Route>
             </Routes>
         </BrowserRouter>

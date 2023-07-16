@@ -45,7 +45,7 @@ export const GamesListElement: React.FC<{game: GameType}> = ({game: {title, code
             </div>
 
             <div className="games-list-element__buttons">
-                <Link className="games-list-element__buttons--link" to={ `/game/${code}` }>View More</Link>
+                <Link className="games-list-element__buttons--link" to={ `/game-shop/game/${code}` }>View More</Link>
 
                 <button
                     className={isWishlist ? "games-list-element__buttons--enabled" : "games-list-element__buttons--disabled"}

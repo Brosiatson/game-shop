@@ -29,7 +29,7 @@ export const KeysLayout: React.FC = () => {
                     <h3 className="keys__title">Thanks for shopping!!!</h3>
                     {keysList}
                 </div>
-                <Link className="keys__link" onClick={handleLink} to="/">Back to Home</Link>
+                <Link className="keys__link" onClick={handleLink} to="/game-shop">Back to Home</Link>
             </main>
         </>
     )

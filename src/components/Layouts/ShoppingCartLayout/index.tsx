@@ -5,12 +5,11 @@ import { GamesListElement } from '../../Other/GamesListElement/Index'
 import { ShoppingCartState } from '../../Other/ShoppingCartState/Index'
 import { ShoppingCartPrice } from '../../Other/ShoppingCartPrice/Index'
 import { GamesSectionHomepage } from "../../Other/GamesSectionHomepage/Index"
-import { ShoppingCartWindow } from "../../Other/ShoppingCartWindow/Index"
 
 export const ShoppingCartLayout: React.FC = () => {
     const {games: {games}} = useContextIsNull()
 
-    const shoppingCartMap = games.map(game => game.isShoppingCart ? <GamesListElementLite game={game}/> : null)
+    const shoppingCartMap = games.map(game => game.isShoppingCart ? <GamesListElementLite key={game.title} game={game}/> : null)
 
     const someGamesMap = games.map((game, i) => i < 3 ? <GamesListElement key={game.title} game={game}/> : null)
 

@@ -31,15 +31,15 @@ export const Header: React.FC = () => {
 
     return (
         <header className='header'>
-            <h1 className='header__title'><Link className='header__title--link' to="/">Games Paradise</Link></h1>
+            <h1 className='header__title'><Link className='header__title--link' to="/game-shop/">Games Paradise</Link></h1>
             <div className='header__searching'>
                 <input className='header__searching--input' type="search" placeholder='Search Game...' value={inputText} onChange={(e) => handleInputText(e)}></input>
-                <Link className="header__searching--link" to={inputText ? "/games" : ""} onClick={handleButtonSearch}>Search</Link>
+                <Link className="header__searching--link" to={inputText ? "/game-shop/games" : ""} onClick={handleButtonSearch}>Search</Link>
             </div>
             <nav className='header__nav'>
                 <div className='header__nav--container'>
-                    <Link className='header__nav--link' to="/games">All Games</Link>
-                    <Link className='header__nav--link' to="/wishlist">Wishlist</Link>
+                    <Link className='header__nav--link' to="/game-shop/games">Store</Link>
+                    <Link className='header__nav--link' to="/game-shop/wishlist">Wishlist</Link>
                     <div className='header__nav--cart'>
                         <button className='header__nav--link' onClick={handleButtonShoppingCart}>Shopping Cart</button>
                         {showShoppingCart ? <ShoppingCartWindow /> : null}

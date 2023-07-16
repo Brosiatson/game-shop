@@ -163,5 +163,104 @@
         "isWishlist": false,
         "isShoppingCart": 0,
         "isSale": 0.10
+    },
+    {
+        "title": "Plague Inc.",
+        "code": "pinc",
+        "rate": "3.9",
+        "img": "pinc.png",
+        "price": 3.33,
+        "isNew": false,
+        "isWishlist": false,
+        "isShoppingCart": 0,
+        "isSale": 0
+    },
+    {
+        "title": "Dying Light",
+        "code": "dyli",
+        "rate": "4.4",
+        "img": "dyli.png",
+        "price": 5.00,
+        "isNew": false,
+        "isWishlist": false,
+        "isShoppingCart": 0,
+        "isSale": 0
+    },
+    {
+        "title": "Cyberpunk 2077",
+        "code": "cy77",
+        "rate": "4.2",
+        "img": "cy77.png",
+        "price": 20.00,
+        "isNew": true,
+        "isWishlist": false,
+        "isShoppingCart": 0,
+        "isSale": 0
+    },
+    {
+        "title": "Euro Truck Simulator 2",
+        "code": "ets2",
+        "rate": "4.7",
+        "img": "ets2.png",
+        "price": 6.79,
+        "isNew": false,
+        "isWishlist": false,
+        "isShoppingCart": 0,
+        "isSale": 0
+    },
+    {
+        "title": "Farming Simulator 22",
+        "code": "fs22",
+        "rate": "4.1",
+        "img": "fs22.png",
+        "price": 4.57,
+        "isNew": true,
+        "isWishlist": false,
+        "isShoppingCart": 0,
+        "isSale": 0
+    },
+    {
+        "title": "Red Dead Redemption",
+        "code": "rdr2",
+        "rate": "4.8",
+        "img": "rdr2.png",
+        "price": 12.00,
+        "isNew": false,
+        "isWishlist": false,
+        "isShoppingCart": 0,
+        "isSale": 0.05
+    },
+    {
+        "title": "Arma 3",
+        "code": "arm3",
+        "rate": "4.3",
+        "img": "arm3.png",
+        "price": 6.20,
+        "isNew": false,
+        "isWishlist": false,
+        "isShoppingCart": 0,
+        "isSale": 0
+    },
+    {
+        "title": "GRID 2",
+        "code": "grd2",
+        "rate": "4.0",
+        "img": "grd2.png",
+        "price": 3.19,
+        "isNew": false,
+        "isWishlist": false,
+        "isShoppingCart": 0,
+        "isSale": 0
+    },
+    {
+        "title": "Saints Row 4",
+        "code": "snr4",
+        "rate": "4.4",
+        "img": "snr4.png",
+        "price": 8.00,
+        "isNew": false,
+        "isWishlist": false,
+        "isShoppingCart": 0,
+        "isSale": 0
     }
 ]

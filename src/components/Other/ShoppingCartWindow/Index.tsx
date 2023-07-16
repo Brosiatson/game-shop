@@ -22,7 +22,7 @@ export const ShoppingCartWindow: React.FC = () => {
         <div className="shopping-cart-window">
             {gamesShoppingCartMap.some(game => game) ? gamesShoppingCartMap : <p className='shopping-cart-window__empty'>Your Shopping Cart is empty!!!</p>}
             <p className='shopping-cart-window__text'>Total: {total.toFixed(2)}$</p>
-            <Link className='shopping-cart-window__link' to="/shopping-cart">View Cart</Link>
+            <Link className='shopping-cart-window__link' to="/game-shop/shopping-cart">View Cart</Link>
         </div>
     )
 }
